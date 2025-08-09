@@ -1,0 +1,151 @@
+/* === Variables globales === */
+:root {
+  --primary-color: #1e90ff; /* Bleu WebAcademy (modifiable) */
+  --secondary-color: #00c896; /* Vert accent */
+  --text-color: #333;
+  --bg-color: #fff;
+  --light-gray: #f4f4f4;
+  --warning-color: #ff9800;
+  --info-color: #2196f3;
+  --reference-color: #673ab7;
+}
+
+/* === Reset simple === */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  line-height: 1.6;
+}
+
+/* === Header === */
+header {
+  background: var(--primary-color);
+  color: white;
+  padding: 2rem 0;
+}
+
+header .page {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+}
+
+header h1 {
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+
+header h1 span {
+  font-weight: 400;
+  font-size: 1.5rem;
+}
+
+header .logo {
+  height: 50px;
+}
+
+/* === Navigation === */
+nav#autogen-top-nav {
+  background: var(--light-gray);
+  padding: 0.5rem 0;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+nav#autogen-top-nav span a {
+  text-decoration: none;
+  color: var(--primary-color);
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  transition: background 0.3s;
+}
+
+nav#autogen-top-nav span.active a,
+nav#autogen-top-nav span a:hover {
+  background: var(--primary-color);
+  color: white;
+}
+
+/* === Callout boxes === */
+.callout {
+  border-left: 5px solid;
+  padding: 1rem;
+  margin: 1rem 0;
+  background: var(--light-gray);
+}
+
+.callout.warning {
+  border-color: var(--warning-color);
+  background: #fff4e5;
+}
+
+.callout.info {
+  border-color: var(--info-color);
+  background: #e8f4fd;
+}
+
+.callout.reference {
+  border-color: var(--reference-color);
+  background: #f3e8fd;
+}
+
+/* === Main content === */
+main.page {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+  padding: 1rem 0;
+}
+
+h2, h3, h4 {
+  color: var(--primary-color);
+  margin: 1rem 0;
+}
+
+ol, ul {
+  margin: 1rem 0 1rem 2rem;
+}
+
+li {
+  margin-bottom: 0.5rem;
+}
+
+code {
+  background: #eee;
+  padding: 0.2rem 0.4rem;
+  border-radius: 4px;
+  font-family: monospace;
+}
+
+/* === Footer === */
+footer {
+  text-align: center;
+  padding: 1rem 0;
+  background: var(--primary-color);
+  color: white;
+  margin-top: 2rem;
+}
+
+/* === Responsive === */
+@media (max-width: 768px) {
+  header .page {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  nav#autogen-top-nav {
+    flex-direction: column;
+  }
+}
