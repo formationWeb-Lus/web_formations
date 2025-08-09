@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>WebAcademy | WDD 231 | Mise en place de l’hébergement</title>
+  <link rel="apple-touch-icon" sizes="180x180" href="../images/logo.png">
+  <link rel="icon" type="image/png" href="../images/logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles/webacademy.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/ir-black.min.css">
+</head>
+
+<body>
+  <header>
+    <div class="page">
+      <h1><span id="coursetitle">  Développement Web Frontend I</span></h1>
+      <img src="/images/logo.png" alt="Logo WebAcademy" class="logo">
+    </div>
+  </header>
+
+  <main class="page">
+    <nav id="autogen-top-nav">
+      <span><a href="../">Accueil</a></span>
+      <span class="active"><a href="../week01/">Semaine 1</a></span>
+    </nav>
+
+    <h2>Semaine 1 : Outils – Déploiement – Dépôt GitHub</h2>
+
+    <h3>Présentation</h3>
+    <p>Cette activité vous permet de configurer votre dépôt <strong>wd300</strong> sur GitHub et de le cloner sur votre ordinateur.
+      Nous utiliserons GitHub pour stocker vos travaux et GitHub Pages pour héberger vos projets en ligne.</p>
+
+    <div class="callout info">
+      <img src="https://github.githubassets.com/assets/GitHub-Mark-ea2971cee799.png" alt="Logo GitHub"
+        width="100" class="floatright">
+      <p>GitHub est une plateforme en ligne de gestion de versions et de collaboration. 
+        Elle offre les fonctionnalités de Git avec des outils supplémentaires pour le travail en équipe.</p>
+    </div>
+
+    <h3>Instructions de l’activité</h3>
+    <ol>
+      <li>Créez ou utilisez votre compte <a href="https://www.github.com" target="_blank" rel="noopener">GitHub</a>.</li>
+      <li>Sur GitHub, créez un dépôt nommé <strong>wd300</strong> (en minuscules).</li>
+      <li>Vérifiez que Git est installé :
+        <pre><code>git --version</code></pre>
+      </li>
+      <li>Configurez votre nom d’utilisateur et votre e-mail global Git :
+        <pre><code>git config --global user.name "VotreNomUtilisateurGitHub"</code></pre>
+        <pre><code>git config --global user.email "VotreEmail@example.com"</code></pre>
+      </li>
+      <li>Assurez-vous que Git ne tienne pas compte de la casse dans les noms de fichiers :
+        <pre><code>git config --global core.ignorecase false</code></pre>
+      </li>
+      <li>Clonez le dépôt sur votre ordinateur.</li>
+      <li>Ouvrez le dossier du dépôt dans VS Code, modifiez des fichiers, validez (commit) et poussez (push) vers GitHub Pages.</li>
+    </ol>
+
+    <h3>Besoin d’aide ?</h3>
+    <p>Si vous ne parvenez pas à effectuer une des étapes, contactez le support de WebAcademy.</p>
+
+    <hr>
+    <nav>
+      <span>
+        <a href="setup-github-pages.html">Suivant ➡️ Activer GitHub Pages</a>
+      </span>
+      <span>
+        <a href="index.html">Retour</a>
+      </span>
+    </nav>
+  </main>
+
+  <footer>
+    <p>Copyright &copy; WebAcademy | Tous droits réservés</p>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+  <script>
+    hljs.highlightAll();
+  </script>
+</body>
+</html>
