@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>WebAcademy - Bases de la Programmation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f6f9;
+            color: #333;
+        }
+        header {
+            background: #004aad;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            position: relative;
+        }
+        header img.logo {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            height: 50px;
+        }
+        article {
+            max-width: 900px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+        }
+        h1, h2, h3 {
+            color: #004aad;
+        }
+        ul, ol {
+            margin-left: 20px;
+        }
+        pre {
+            background: #f0f0f0;
+            padding: 10px;
+            overflow-x: auto;
+            border-radius: 5px;
+        }
+        strong {
+            color: #000;
+        }
+        @media (max-width: 768px) {
+            body {
+                font-size: 18px;
+            }
+            header h1 {
+                font-size: 1.4em;
+            }
+            header img.logo {
+                height: 40px;
+                top: 10px;
+                right: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header id="courseTitle">
+        <h1>WebAcademy | Bases de la Programmation</h1>
+        <img src="images/logo.png" alt="Logo WebAcademy" class="logo">
+    </header>
+
+    <article>
+        <h1>01 Exercice : Couleur préférée</h1>
+
+        <h2>Présentation</h2>
+        <p>Dans cet exercice, vous allez écrire un programme qui utilise à la fois une entrée (demander une donnée à l'utilisateur via le clavier) et une sortie (afficher une donnée à l'écran).</p>
+
+        <h2>Instructions</h2>
+        <p>Écrivez un programme qui demande à l’utilisateur sa couleur préférée, lui permet de la saisir, puis lui répond en affichant le texte « Votre couleur préférée est » suivi de la couleur saisie.</p>
+
+        <p>Exemple :</p>
+<pre><code>
+Veuillez saisir votre couleur préférée : <span class="user-input">Bleu</span>
+Votre couleur préférée est
+Bleu
+</code></pre>
+
+        <p>Autre exemple :</p>
+<pre><code>
+Veuillez saisir votre couleur préférée : <span class="user-input">Rose vif</span>
+Votre couleur préférée est
+Rose vif
+</code></pre>
+
+        <p>Remarquez que le programme affiche exactement ce que l’utilisateur tape, et que la réponse change en fonction de la saisie.</p>
+
+        <p>Pour réaliser cela, vous devrez :</p>
+        <ul>
+            <li>Demander une donnée à l'utilisateur (fonction <code>input</code> en Python).</li>
+            <li>Stocker la donnée saisie dans une variable.</li>
+            <li>Afficher le contenu de cette variable à l’écran.</li>
+        </ul>
+
+        <h2>Aller plus loin</h2>
+        <p>Pour obtenir la note maximale, vous pouvez ajouter de la créativité à votre programme :</p>
+        <ul>
+            <li>Poser d’autres questions et afficher les réponses.</li>
+            <li>Modifier le format d’affichage (par exemple mettre la couleur entre guillemets ou ajouter un point d’exclamation).</li>
+            <li>Changer le message pour le rendre plus original.</li>
+            <li>Ajouter toute autre fonctionnalité que vous imaginez.</li>
+        </ul>
+
+        <h2>Soumission</h2>
+        <p>Pour soumettre votre travail :</p>
+        <ol>
+            <li>Envoyez votre fichier Python (.py) via la plateforme WebAcademy pour évaluation.</li>
+            <li>Ajoutez un commentaire précisant la catégorie d’évaluation correspondant le mieux à votre travail, et justifiez votre choix en 1 à 2 phrases.</li>
+        </ol>
+    </article>
+</body>
+</html>
