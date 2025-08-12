@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Exercice : Couleurs préférées</title>
+<style>
+  body {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    max-width: 600px;
+    margin: 2rem auto;
+    background: #f5f8fa;
+    color: #333;
+    padding: 1rem 2rem;
+  }
+  h1 {
+    color: #2980b9;
+    text-align: center;
+  }
+  label {
+    display: block;
+    margin-top: 1rem;
+    font-weight: 600;
+  }
+  input[type="text"] {
+    width: 100%;
+    padding: 0.4rem;
+    font-size: 1rem;
+    margin-top: 0.3rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  button {
+    margin-top: 1.5rem;
+    padding: 0.6rem 1.2rem;
+    font-size: 1rem;
+    background-color: #2980b9;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  button:hover {
+    background-color: #1c5d8b;
+  }
+  #resultat {
+    margin-top: 2rem;
+    padding: 1rem;
+    background: #eaf3fb;
+    border-left: 5px solid #2980b9;
+    font-weight: 600;
+    font-size: 1.1rem;
+  }
+</style>
+</head>
+<body>
+
+<h1>Exercice : Tes couleurs préférées</h1>
+
+<form id="formCouleurs">
+  <label for="couleur1">Quelle est ta couleur préférée ?</label>
+  <input type="text" id="couleur1" name="couleur1" required />
+
+  <label for="couleur2">Quelle est ta deuxième couleur préférée ?</label>
+  <input type="text" id="couleur2" name="couleur2" required />
+
+  <button type="submit">Valider</button>
+</form>
+
+<div id="resultat" style="display:none;"></div>
+
+<script>
+  const form = document.getElementById("formCouleurs");
+  const resultat = document.getElementById("resultat");
+
+  form.addEventListener("submit", function(event) {
+    event.preventDefault();
+
+    const c1 = form.couleur1.value.trim();
+    const c2 = form.couleur2.value.trim();
+
+    if (!c1 || !c2) {
+      alert("Merci de remplir les deux champs.");
+      return;
+    }
+
+    // Afficher le résultat final uniquement
+    resultat.innerHTML = `
+      Voici tes couleurs préférées :<br>
+      1ère couleur : <strong>${c1}</strong><br>
+      2ème couleur : <strong>${c2}</strong>
+    `;
+    resultat.style.display = "block";
+
+    // Cacher le formulaire pour ne plus montrer les champs
+    form.style.display = "none";
+  });
+</script>
+
+</body>
+</html>
+
