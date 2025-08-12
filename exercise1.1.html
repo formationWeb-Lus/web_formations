@@ -55,13 +55,15 @@
 </head>
 <body>
 
-<h1>Exercice : Tes couleurs préférées</h1>
+<h1>Exercice : Vos couleurs préférées</h1>
 
 <form id="formCouleurs">
-  <label for="couleur1">Quelle est ta couleur préférée ?</label>
+  <p>Bonjour<br>Bienvenue à notre premier programme</p>
+
+  <label for="couleur1">Quelle est votre couleur préférée ?</label>
   <input type="text" id="couleur1" name="couleur1" required />
 
-  <label for="couleur2">Quelle est ta deuxième couleur préférée ?</label>
+  <label for="couleur2">Quelle est votre deuxième couleur préférée ?</label>
   <input type="text" id="couleur2" name="couleur2" required />
 
   <button type="submit">Valider</button>
@@ -84,19 +86,16 @@
       return;
     }
 
-    // Afficher le résultat final uniquement
     resultat.innerHTML = `
-      Voici tes couleurs préférées :<br>
-      1ère couleur : <strong>${c1}</strong><br>
-      2ème couleur : <strong>${c2}</strong>
+      Votre première couleur préférée est : <strong>${c1}</strong><br>
+      Votre deuxième couleur préférée est : <strong>${c2}</strong><br><br>
+      Merci d'avoir passé du temps dans ce programme.
     `;
     resultat.style.display = "block";
 
-    // Cacher le formulaire pour ne plus montrer les champs
     form.style.display = "none";
   });
 </script>
 
 </body>
 </html>
-
