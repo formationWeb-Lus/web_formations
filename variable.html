@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Variables en Python — Cours pour débutants | WebAcademy</title>
+<style>
+  /* --- SCSS compilé en CSS --- */
+  :root{
+    --bg:#f6fbff;
+    --card:#ffffff;
+    --accent:#1f6feb;
+    --muted:#6b7280;
+    --mono: "Courier New", Consolas, Monaco, monospace;
+    --radius:12px;
+    --maxw:980px;
+  }
+  *{box-sizing:border-box}
+  body{
+    font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    background:var(--bg);
+    color:#0f172a;
+    margin:0;
+    padding:2rem;
+    display:flex;
+    justify-content:center;
+  }
+  .container{
+    width:100%;
+    max-width:var(--maxw);
+    background:transparent;
+  }
+  header{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:1rem;
+    margin-bottom:1.1rem;
+  }
+  header h1{
+    margin:0;
+    font-size:1.6rem;
+    color:var(--accent);
+  }
+  header p{
+    margin:0;
+    color:var(--muted);
+    font-size:0.95rem;
+  }
+  .card{
+    background:var(--card);
+    border-radius:var(--radius);
+    padding:1.25rem;
+    box-shadow:0 6px 18px rgba(15,23,42,0.06);
+    margin-bottom:1rem;
+  }
+  h2{color:#0b1220;margin:0 0 .5rem 0}
+  h3{color:#0b1220;margin:1rem 0 .5rem 0;font-size:1.05rem}
+  p{margin:.4rem 0 1rem 0;color:#10203a}
+  ul{margin:0 0 1rem 1.1rem}
+  li{margin:.35rem 0;color:#10203a}
+  pre{
+    background:#0b1220;
+    color:#dbeafe;
+    padding:1rem;
+    border-radius:8px;
+    overflow:auto;
+    font-family:var(--mono);
+    font-size:0.95rem;
+    line-height:1.45;
+    margin:0 0 1rem 0;
+  }
+  code{font-family:var(--mono);font-size:0.95rem}
+  .note{
+    background:#fffbeb;
+    border-left:4px solid #f59e0b;
+    padding:.8rem;
+    border-radius:8px;
+    color:#92400e;
+    margin: .6rem 0 1rem 0;
+  }
+  .muted{color:var(--muted);font-size:.95rem}
+  .grid{display:grid;grid-template-columns:1fr 340px;gap:1rem}
+  @media (max-width:880px){.grid{grid-template-columns:1fr}}
+  .aside{position:sticky;top:1.5rem}
+  .example-title{font-weight:700;color:var(--accent);margin-bottom:.4rem}
+  .btn{
+    display:inline-block;padding:.5rem .8rem;border-radius:8px;background:var(--accent);
+    color:white;text-decoration:none;border:none;cursor:pointer;font-weight:600;font-size:.95rem;
+  }
+  .exercise{background:#eef2ff;border-left:4px solid var(--accent);padding:.8rem;border-radius:8px;margin-top:1rem}
+  .solution{display:none;margin-top:.6rem;padding:.6rem;background:#0b1220;color:#dbeafe;border-radius:8px}
+  .link{
+    color:var(--accent);text-decoration:none;font-weight:600;display:inline-flex;align-items:center;gap:.4rem;
+  }
+  .small{font-size:.9rem;color:var(--muted)}
+  /* interactive form */
+  .form-row{display:flex;gap:.5rem;flex-direction:column}
+  input[type="text"]{padding:.5rem;border-radius:6px;border:1px solid #cbd5e1;font-size:1rem}
+  .result-play{margin-top:.6rem;padding:.8rem;border-radius:8px;background:#f1f5f9;border:1px solid #e2e8f0}
+</style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div>
+        <h1>Variables en Python — Leçon pour débutants</h1>
+        <p class="small">Comprendre comment stocker des données, utiliser <code>input()</code> et afficher avec <code>print()</code></p>
+      </div>
+      <div class="small muted">Durée estimée : 15–30 min</div>
+    </header>
+
+    <div class="grid">
+      <!-- main -->
+      <main class="card">
+        <h2>1. Qu’est-ce qu’une variable ?</h2>
+        <p>
+          Une <strong>variable</strong> est un nom que l’on donne à un emplacement mémoire pour stocker une valeur.
+          On peut imaginer une variable comme une boîte portant une étiquette : on met quelque chose dedans et on peut le réutiliser plus tard.
+        </p>
+
+        <h3>Règles de nommage</h3>
+        <ul>
+          <li>Utiliser des lettres, chiffres et underscore <code>_</code> (ex. <code>ma_variable</code>).</li>
+          <li>Ne pas commencer par un chiffre (pas <code>1nom</code>)</li>
+          <li>Sensibilité à la casse : <code>Nom</code> ≠ <code>nom</code>.</li>
+          <li>Choisir des noms parlants : <code>prenom</code> au lieu de <code>p</code>.</li>
+        </ul>
+
+        <h3>Types de valeurs courantes</h3>
+        <ul>
+          <li><strong>Chaîne</strong> (texte) : <code>"Bonjour"</code></li>
+          <li><strong>Nombre entier</strong> : <code>42</code></li>
+          <li><strong>Nombre décimal</strong> : <code>3.14</code></li>
+          <li><strong>Booléen</strong> : <code>True</code> ou <code>False</code></li>
+        </ul>
+
+        <h2>2. Exemples concrets (avec commentaires)</h2>
+
+        <p class="example-title">Exemple A — Stocker et afficher des valeurs</p>
+        <pre><code># Exemple A : déclarer des variables et les afficher
+nom = "Alice"            # nom est une variable qui contient une chaîne de caractères
+age = 28                 # age contient un entier
+ville = "Goma"           # ville contient une chaîne
+
+print("Nom :", nom)      # Affiche : Nom : Alice
+print("Âge :", age)      # Affiche : Âge : 28
+print("Ville :", ville)  # Affiche : Ville : Goma</code></pre>
+
+        <p class="example-title">Exemple B — Lire une valeur avec <code>input()</code> et afficher</p>
+        <pre><code># Exemple B : utiliser input() pour obtenir une saisie utilisateur
+prenom = input("Quel est ton prénom ? ")    # input affiche la question et attend la réponse
+print("Bonjour", prenom)                    # On réutilise la valeur saisie et on l'affiche</code></pre>
+
+        <p class="example-title">Exemple C — Conversion de type</p>
+        <pre><code># Exemple C : convertir le texte saisi en nombre pour faire un calcul
+annee_naissance = input("En quelle année es-tu né(e) ? ")
+annee_naissance = int(annee_naissance)     # int() convertit la chaîne en entier
+age = 2025 - annee_naissance
+print("Tu as environ", age, "ans")</code></pre>
+
+        <div class="note">
+          <strong>Remarque :</strong> <code>input()</code> retourne toujours une chaîne (string). Pour faire des calculs, il faut convertir avec <code>int()</code> ou <code>float()</code>.
+        </div>
+
+        <h2>3. Atelier interactif (simulateur)</h2>
+        <p class="small">Simule le programme Python ci-dessous : il te demande deux couleurs, puis affiche le récapitulatif.</p>
+
+        <div class="card" style="padding:.8rem">
+          <div class="form-row">
+            <label for="i1"><strong>Quel est ta première couleur préférée ?</strong></label>
+            <input id="i1" type="text" placeholder="Ex. bleu" />
+          </div>
+          <div class="form-row" style="margin-top:.6rem">
+            <label for="i2"><strong>Quel est ta deuxième couleur préférée ?</strong></label>
+            <input id="i2" type="text" placeholder="Ex. vert" />
+          </div>
+          <div style="margin-top:.8rem">
+            <button id="runBtn" class="btn">Exécuter (simuler)</button>
+            <button id="resetBtn" class="btn" style="background:#6b7280;margin-left:.6rem">Réinitialiser</button>
+          </div>
+          <div id="playResult" class="result-play" aria-live="polite" style="display:none"></div>
+          <div class="small muted" style="margin-top:.6rem">Le simulateur montre uniquement le résultat final (comme si Python avait exécuté <code>print()</code>).</div>
+        </div>
+
+        <h2>4. Exercices (pour pratiquer)</h2>
+        <div class="exercise">
+          <ol>
+            <li>Écris un programme qui demande le prénom et l'âge de l'utilisateur, puis affiche : 
+              <br><em>"Bonjour &lt;prénom&gt;, tu as &lt;age&gt; ans."</em></li>
+            <li>Écris un programme qui demande deux nombres et affiche leur somme.</li>
+            <li>Exercice challenge : demande 3 couleurs et affiche-les sur une seule ligne séparées par des virgules.</li>
+          </ol>
+          <button class="btn" id="showSolutions">Afficher les solutions</button>
+          <div class="solution" id="solutions">
+<pre><code># Solution exercice 1
+prenom = input("Prénom ? ")
+age = input("Âge ? ")
+print(f"Bonjour {prenom}, tu as {age} ans.")
+
+# Solution exercice 2
+a = int(input("Nombre 1 ? "))
+b = int(input("Nombre 2 ? "))
+print("La somme est", a + b)
+
+# Solution exercice 3
+c1 = input("Couleur 1 ? ")
+c2 = input("Couleur 2 ? ")
+c3 = input("Couleur 3 ? ")
+print(c1 + ", " + c2 + ", " + c3)</code></pre>
+          </div>
+        </div>
+
+        <h2>5. Résumé</h2>
+        <ul>
+          <li>Une variable stocke une valeur et porte un nom.</li>
+          <li><code>input()</code> sert à lire une saisie utilisateur (toujours une chaîne).</li>
+          <li>Convertir les types si nécessaire (ex. <code>int()</code> pour les entiers).</li>
+          <li><code>print()</code> affiche du texte et/ou le contenu des variables.</li>
+        </ul>
+
+        <p class="small muted">Besoin de plus d'exemples ou d'une version imprimable ? Dis-moi et je te prépare la feuille de cours PDF ou une page d'exercices supplémentaires.</p>
+      </main>
+
+      <!-- aside -->
+      <aside class="aside">
+        <div class="card">
+          <h3>Ressources</h3>
+            <p>
+        📚 Pour approfondir vos connaissances, vous pouvez lire la documentation officielle en français sur Python :  
+        <a href="https://docs.python.org/fr/3/tutorial/introduction.html" target="_blank">
+            Documentation Python (Variables)
+        </a>
+    </p>
+        </div>
+
+        <div class="card" style="margin-top:1rem">
+          <h3>Astuce rapide</h3>
+          <p class="small">Pour déboguer, ajoutez des <code>print()</code> entre les étapes pour vérifier les valeurs des variables.</p>
+        </div>
+      </aside>
+    </div>
+  </div>
+
+<script>
+  // Simulator for the interactive exercise (no Python runtime, only to show how print would output)
+  const runBtn = document.getElementById('runBtn');
+  const resetBtn = document.getElementById('resetBtn');
+  const i1 = document.getElementById('i1');
+  const i2 = document.getElementById('i2');
+  const playResult = document.getElementById('playResult');
+
+  runBtn.addEventListener('click', () => {
+    const c1 = i1.value.trim();
+    const c2 = i2.value.trim();
+    if (!c1 || !c2) {
+      alert('Merci de remplir les deux champs.');
+      return;
+    }
+    // Simuler le comportement Python : afficher seulement le résultat final
+    playResult.innerHTML = `<strong>Votre première couleur préférée est :</strong> ${escapeHtml(c1)}<br>
+                            <strong>Votre deuxième couleur préférée est :</strong> ${escapeHtml(c2)}<br><br>
+                            <em>Merci d'avoir passé du temps dans ce programme.</em>`;
+    playResult.style.display = 'block';
+    // masquer les champs (comme en exercice final)
+    i1.disabled = true; i2.disabled = true;
+    runBtn.disabled = true;
+  });
+
+  resetBtn.addEventListener('click', () => {
+    i1.value = ''; i2.value = '';
+    i1.disabled = false; i2.disabled = false;
+    runBtn.disabled = false;
+    playResult.style.display = 'none';
+  });
+
+  // show/hide solutions
+  document.getElementById('showSolutions').addEventListener('click', () => {
+    const sol = document.getElementById('solutions');
+    sol.style.display = sol.style.display === 'block' ? 'none' : 'block';
+  });
+
+  // helper for safe HTML
+  function escapeHtml(text) {
+    return text.replace(/[&<>"']/g, function(m){ return ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'})[m]; });
+  }
+
+  // local resource link placeholder (you can replace the URL)
+  document.getElementById('localResources').addEventListener('click', function(e){
+    e.preventDefault();
+    alert("Remplacez '#' par l'URL de vos ressources ou configurez la page pour pointer vers la bibliothèque de votre plateforme.");
+  });
+</script>
+</body>
+</html>
