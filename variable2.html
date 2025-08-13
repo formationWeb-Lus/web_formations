@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercice Python - Variables, Input et Print</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f5f7fa;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background: #1e90ff;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        main {
+            max-width: 900px;
+            margin: 30px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #1e90ff;
+            text-align: center;
+        }
+        pre {
+            background: #282c34;
+            color: #f8f8f2;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        .result {
+            background: #eaf7ea;
+            border-left: 5px solid #4CAF50;
+            padding: 10px;
+            margin-top: 15px;
+        }
+        .note {
+            background: #fff8e1;
+            border-left: 5px solid #ffc107;
+            padding: 10px;
+            margin-top: 15px;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>💻 Exercice Python : Variables, Input et Print</h1>
+</header>
+
+<main>
+    <h2>Objectif de l’exercice</h2>
+    <p>
+        Dans cet exercice, vous allez apprendre à utiliser les <strong>variables</strong>, la fonction 
+        <code>input()</code> pour demander des informations à l’utilisateur et la fonction <code>print()</code> 
+        pour afficher un message.
+    </p>
+
+    <h2>Code Python avec explications</h2>
+    <pre>
+# Bienvenue dans notre premier exercice Python
+
+# 1️⃣ On commence par saluer l'utilisateur
+print("Bonjour et bienvenue dans notre programme !")
+
+# 2️⃣ On demande la première couleur préférée
+# La valeur saisie sera stockée dans une variable
+couleur1 = input("Quelle est votre couleur préférée ? ")
+
+# 3️⃣ On demande la deuxième couleur préférée
+couleur2 = input("Et votre deuxième couleur préférée ? ")
+
+# 4️⃣ On affiche un résumé des réponses
+print("\n📌 Résumé :")
+print("Votre première couleur préférée est :", couleur1)
+print("Votre deuxième couleur préférée est :", couleur2)
+
+# 5️⃣ On remercie l'utilisateur
+print("\nMerci d'avoir utilisé ce programme !")
+    </pre>
+
+    <h2>Résultat attendu</h2>
+    <div class="result">
+        Bonjour et bienvenue dans notre programme !<br>
+        Quelle est votre couleur préférée ? <em>(l'utilisateur tape Rouge)</em><br>
+        Et votre deuxième couleur préférée ? <em>(l'utilisateur tape Bleu)</em><br><br>
+        📌 Résumé :<br>
+        Votre première couleur préférée est : Rouge<br>
+        Votre deuxième couleur préférée est : Bleu<br><br>
+        Merci d'avoir utilisé ce programme !
+    </div>
+
+    <div class="note">
+        💡 Astuce : Les variables vous permettent de stocker des données et de les réutiliser plus tard dans votre programme.
+    </div>
+</main>
+
+</body>
+</html>
